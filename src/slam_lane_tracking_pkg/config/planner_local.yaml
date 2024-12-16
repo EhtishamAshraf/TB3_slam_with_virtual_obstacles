@@ -1,0 +1,25 @@
+# Reff: http://wiki.ros.org/base_local_planner
+base_local_planner: base_local_planner/TrajectoryPlannerROS
+
+TrajectoryPlannerROS:
+    min_vel_x: 0.1 
+    max_vel_x: 0.3 
+    min_vel_theta: -0.7 
+    max_vel_theta: 0.7 
+    min_in_place_vel_theta: 0.4 
+    escape_vel: -0.1
+
+    acc_lim_theta: 1.0
+    acc_lim_x: 1.0 
+
+    holonomic_robot: true # Considering the robot can move in all directions
+
+    xy_goal_tolerance: 0.5 # 0.1
+    yaw_goal_tolerance: 1 # 0.7 # 0.3
+
+    meter_scoring: true
+    path_distance_bias: 15 # 20
+    goal_distance_bias: 12 # 15
+    occdist_scale: 0.1 # 0.01
+
+    sim_time: 2.0 
