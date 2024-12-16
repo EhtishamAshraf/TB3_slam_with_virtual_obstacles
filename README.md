@@ -188,7 +188,7 @@ Replace <turtlebot-ip> with the TurtleBot's IP address and enter the password wh
 ```bash
 roslaunch turtlebot3_bringup turtlebot3_robot.launch
 ```
-3. Follow complete step 2 again on a new terminal but this time replace the following line with the bringup command (Terminal 3)
+3. Follow complete step 2 again on a new terminal but this time replace the bringup command with the following line (Terminal 3)
 ```bash
 roslaunch turtlebot3_autorace_camera raspberry_pi_camera_publish.launch
 ```
