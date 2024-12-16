@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="laser_visual" 			  default="false"/>
+  <arg name="camera_on"           default="false"/>
+  <arg name="publish_tf"          default="true"/>
+  <arg name="robot_namespace" 		default=""/>
+  <arg name="enable_ekf" 			    default="true"/>
+  <arg name="robot_description"  	default="robot_description"/>
+  <arg name="description_file"    default="$(find mrob_description)/urdf/turtlebot3_burger.urdf.xacro"/>
+
+  <!-- Load robot description -->
+  <include file="$(find mrob_description)/launch/load.launch">
+    <arg name="description_name" value="$(arg robot_description)"/>
+    <arg name="description_file" value="$(arg description_file)"/>
+    <arg name="robot_namespace"  value="$(arg robot_namespace)"/>
+    <arg name="laser_visual" 		 value="$(arg laser_visual)"/>
+    <arg name="camera_on"        value="$(arg camera_on)"/>
+  </include>
+
+  <!-- Load controller configuration -->
+  <rosparam command="load" file="$(find mrob_control)/config/control.yaml" />
+  <rosparam command="load" file="$(find mrob_control)/config/gazebo_pid.yaml" />
+
+  <!-- Spawn controllers -->
+  <node name="base_controller_spawner" pkg="controller_manager" type="spawner"
+        args="mrob_joint_publisher mrob_velocity_controller"/>
+
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" output="screen">
+    <param name="publish_frequency" type="double" value="50.0" />
+    <param name="use_tf_static"     value="true"/>
+    <remap from="robot_description" to="$(arg robot_description)"/>
+  </node>
+
+  <node pkg="twist_mux" type="twist_mux" name="twist_mux">
+    <rosparam command="load" file="$(find mrob_control)/config/twist_mux.yaml" />
+    <remap from="cmd_vel_out" to="mrob_velocity_controller/cmd_vel"/>
+  </node>
+
+  <!-- Start EKF for localization -->
+  <group if="$(arg enable_ekf)" >
+    <node pkg="robot_localization" type="ekf_localization_node" name="ekf_localization">
+      <rosparam command="load" file="$(find mrob_control)/config/localization.yaml" />
+    </node>
+  </group>
+
+  <group unless="$(arg enable_ekf)" >
+    <rosparam>
+      mrob_velocity_controller/enable_odom_tf: true
+    </rosparam>
+  </group>
+
+</launch>

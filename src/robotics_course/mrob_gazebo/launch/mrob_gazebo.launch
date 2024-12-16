@@ -1,0 +1,71 @@
+<launch>
+
+  <!-- GAZEBO ARGUMENTS -->
+  <env name="GAZEBO_RESOURCE_PATH" value="$(find turtlebot3_gazebo)/models/autorace/ground_picture" />
+  
+  <!-- Run Gazebo headless -->
+  <arg name="headless"                              default="false"/>
+  <!-- Model path -->
+  <arg name="robot_namespace"                       default=""/>
+  <arg name="robot_model_name"                      default="burger"/>
+  <arg name="enable_ekf"                            default="false"/>
+  <arg name="camera_on"                             default="true"/>
+  <arg name="lidar_visual"                          default="false"/>
+
+  <!-- Name of the world -->
+  <arg name="world"                                 default="empty"/>
+  <!-- Path to the world file -->
+  <arg name="world_file"                            default="$(find mrob_gazebo)/worlds/$(arg world).world"/>
+
+  <!-- Set the initial pose of the robot's main body -->
+
+  <arg name="x_pos" default="0.225"/>
+  <arg name="y_pos" default="-1.767"/>
+  <arg name="z_pos" default="0"/>  
+  <arg name="roll"                                  default="0.0"/>
+  <arg name="pitch"                                 default="0.0"/>
+  <arg name="yaw"                                   default="0.0"/>
+
+  <!-- Start paused -->
+  <arg name="paused"                                default="false"/>
+  <!-- Use simulation clock -->
+  <arg name="use_sim_time"                          default="true"/>
+  <!-- Debug mode -->
+  <arg name="debug"                                 default="false"/>
+  <!-- Verbose mode -->
+  <arg name="verbose"                               default="true"/>
+
+  <!-- GUI ARGUMENTS -->
+  <!-- Enable/disable Gazebo GUI -->
+  <arg name="run_gui"                               default="true"/>
+  
+  <!-- ROBOT ARGUMENTS -->
+  <!-- Name of the robot description parameter -->
+  <arg name="robot_description" default="robot_description"/>
+
+  <!-- Load Gazebo world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name"        value="$(arg world_file)"/>
+    <arg name="paused"            value="$(arg paused)"/>
+    <arg name="use_sim_time"      value="$(arg use_sim_time)"/>
+    <arg name="gui"               value="$(arg run_gui)"/>
+    <arg name="headless"          value="$(arg headless)"/>
+    <arg name="debug"             value="$(arg debug)"/>
+    <arg name="verbose"           value="$(arg verbose)"/>
+  </include>
+
+  <!-- Spawn robot in Gazebo -->
+  <node pkg="gazebo_ros" type="spawn_model" name="spawn_urdf" 
+    args="-urdf -model $(arg robot_model_name) -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos)
+       -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)
+       -param $(arg robot_description)" 
+    output="screen"/>
+
+  <include file="$(find mrob_control)/launch/control.launch">
+    <arg name="laser_visual"        default="$(arg lidar_visual)"/>
+    <arg name="camera_on"           default="$(arg camera_on)"/>
+    <arg name="robot_namespace"     default="$(arg robot_namespace)"/>
+    <arg name="robot_description"   default="$(arg robot_description)"/>
+    <arg name="enable_ekf"          default="$(arg enable_ekf)" />
+  </include>
+</launch>

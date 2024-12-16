@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>mrob_description</name>
+  <version>0.2.0</version>
+  <description>MobRobot descirption (source from Super mega bot description)</description>
+  <maintainer email="koen.kraemer@mavt.ethz.ch">Koen Kraemer</maintainer>
+  <maintainer email="carlos-manuel.mateo-agullo@robotis.com">Carlos Mateo-Agullo</maintainer>
+  <license>BSD</license>
+  <url type="website"> https://bitbucket.org/leggedrobotics/smb_common </url>
+  <author email="koen.kraemer@mavt.ethz.ch">Koen Kraemer</author>
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>xacro</depend>
+  <depend>urdf</depend>
+  <depend>roslib</depend>
+  <depend>hector_gazebo_plugins</depend>
+</package>

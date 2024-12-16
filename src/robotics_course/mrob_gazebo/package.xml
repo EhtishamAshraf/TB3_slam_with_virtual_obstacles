@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>mrob_gazebo</name>
+  <version>0.0.2</version>
+  <description>The mrob Gazebo package</description>
+  <license>BSD</license>
+  <author email="carlos-manuel.mateo-agullo@robotis.com">Carlos Mateo-Agullo</author>
+  <maintainer email="carlos-manuel.mateo-agullo@robotis.com">Carlos Mateo-Agullo</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>turtlebot3_gazebo</build_depend>
+  <build_export_depend>turtlebot3_gazebo</build_export_depend>
+  <exec_depend>turtlebot3_gazebo</exec_depend>
+
+  <exec_depend>pointcloud_to_laserscan</exec_depend>
+  <build_depend>pointcloud_to_laserscan</build_depend>
+
+  <export>
+  </export>
+</package>

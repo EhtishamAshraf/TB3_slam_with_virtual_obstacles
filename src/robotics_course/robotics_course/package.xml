@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>robotics_course</name>
+  <version>0.0.2</version>
+  <description>
+    ROS packages for the Robotics course (meta package)
+  </description>
+  <license>BSD</license>
+  <author email="carlos-manuel.mateo-agullo@robotis.com">Carlos Mateo-Agullo</author>
+  <author>Carlos Mateo-Agullo</author>
+  <maintainer email="carlos-manuel.mateo-agullo@robotis.com">Carlos Mateo-Agullo</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <exec_depend>turtlebot3_bringup</exec_depend>
+  <exec_depend>turtlebot3_description</exec_depend>
+  <exec_depend>turtlebot3_example</exec_depend>
+  <exec_depend>turtlebot3_navigation</exec_depend>
+  <exec_depend>turtlebot3_slam</exec_depend>
+  <exec_depend>turtlebot3_teleop</exec_depend>
+
+  <export>
+    <metapackage/>
+  </export>
+</package>
