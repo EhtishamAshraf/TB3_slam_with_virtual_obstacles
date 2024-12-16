@@ -1,0 +1,29 @@
+<!-- 
+This launch file, uses move_base package to navigate the robot in the Environment. 
+For localization, this node imports the localization.launch file as well. 
+
+Reference: https://husarion.com/tutorials/ros-tutorials/9-navigation/
+Reference: https://www.youtube.com/watch?v=lW-c88vxLRE&list=PLlqdnFs9xNwql5KET7v7zyl393y10qxtw&index=3
+-->
+
+<launch>
+
+   <!-- Localization -->
+   <include file="$(find slam_lane_tracking_pkg)/launch/localization.launch">
+   </include>
+
+   <!-- Path planning -->
+   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+      <rosparam file="$(find slam_lane_tracking_pkg)/config/move_base.yaml" command="load" />
+      <rosparam file="$(find slam_lane_tracking_pkg)/config/costmap_common.yaml" command="load" ns="global_costmap" />
+      <rosparam file="$(find slam_lane_tracking_pkg)/config/costmap_common.yaml" command="load" ns="local_costmap" />
+      <rosparam file="$(find slam_lane_tracking_pkg)/config/costmap_global.yaml" command="load" />
+      <rosparam file="$(find slam_lane_tracking_pkg)/config/costmap_local.yaml" command="load" />
+      <rosparam file="$(find slam_lane_tracking_pkg)/config/planner_global.yaml" command="load" />
+      <rosparam file="$(find slam_lane_tracking_pkg)/config/planner_local.yaml" command="load" />
+   </node>
+
+    <!-- Rviz -->
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find slam_lane_tracking_pkg)/rviz/move_base.rviz" />
+
+</launch>

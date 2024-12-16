@@ -1,0 +1,41 @@
+<!-- 
+This launch file, uses AMCL to localize the robot in the Environment. 
+
+Reference: https://husarion.com/tutorials/ros-tutorials/8-slam/
+-->
+
+<launch>
+
+    <env name="GAZEBO_RESOURCE_PATH" value="$(find mrob_gazebo)/worlds" />
+
+  <!-- variables definition -->
+  <arg name="use_gazebo" default="true" />
+  <arg name="map_name" default="new_map_obs.yaml"/>
+
+  <!-- Environment -->
+  <group if="$(arg use_gazebo)">
+      <param name="use_sim_time" value="true" />
+      <include file="$(find mrob_gazebo)/launch/mrob_gazebo.launch">
+          <arg name="world" value="turtlebot3_autorace"/>
+      </include>
+  </group>
+
+  <!-- Load map -->
+  <node pkg="map_server" type="map_server" name="map_server" args="$(find slam_lane_tracking_pkg)/maps/$(arg map_name)" respawn="true"/>
+
+  <!-- AMCL localizer -->
+  <node pkg="amcl" type="amcl" name="amcl" output="screen">
+    <param name="odom_frame_id"     value="odom"/>
+    <param name="odom_model_type"   value="diff-corrected"/>
+    <param name="base_frame_id"     value="base_link"/>
+    <param name="update_min_d"      value="0.4"/> <!--0.1-->
+    <param name="update_min_a"      value="0.5"/> <!--0.2-->
+    <param name="min_particles"     value="100"/> 
+    <param name="global_frame_id"   value="map"/>
+    <param name="tf_broadcast"      value="true" />
+    <param name="initial_pose_x"    value="0.0"/>
+    <param name="initial_pose_y"    value="0.0"/>
+    <param name="initial_pose_a"    value="0.0"/>
+  </node>
+
+</launch>

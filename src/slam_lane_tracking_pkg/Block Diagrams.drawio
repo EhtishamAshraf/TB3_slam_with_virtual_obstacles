@@ -1,0 +1,82 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36" version="25.0.3">
+  <diagram name="Page-1" id="zGPpp3myxNqGEa4oG3VN">
+    <mxGraphModel dx="1257" dy="1043" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="HMViNhWAmGEvSDqyo111-1" value="&lt;b&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;Lane Tracking&lt;br&gt;&amp;amp;&lt;br&gt;Simultaneous Localization and Mapping&lt;br&gt;(SLAM)&lt;/font&gt;&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;gradientColor=#7ea6e0;" vertex="1" parent="1">
+          <mxGeometry x="320" y="130" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="HMViNhWAmGEvSDqyo111-2" value="&lt;b&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;Camera Feed&lt;br&gt;&amp;amp;&lt;br&gt;Odometry Data&lt;/font&gt;&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#008a00;fontColor=#ffffff;strokeColor=#005700;" vertex="1" parent="1">
+          <mxGeometry x="119" y="155.5" width="121" height="69" as="geometry" />
+        </mxCell>
+        <mxCell id="HMViNhWAmGEvSDqyo111-3" value="&lt;b&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;Robot Steering&lt;br&gt;&amp;amp;&lt;br&gt;Virtual Obstacle Avoidance&lt;/font&gt;&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#008a00;strokeColor=#005700;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="560" y="153" width="127" height="74" as="geometry" />
+        </mxCell>
+        <mxCell id="HMViNhWAmGEvSDqyo111-6" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;curved=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="HMViNhWAmGEvSDqyo111-1" target="HMViNhWAmGEvSDqyo111-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="424" y="243" as="sourcePoint" />
+            <mxPoint x="487" y="354" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HMViNhWAmGEvSDqyo111-9" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;curved=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="HMViNhWAmGEvSDqyo111-2" target="HMViNhWAmGEvSDqyo111-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="424" y="243" as="sourcePoint" />
+            <mxPoint x="474" y="193" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HMViNhWAmGEvSDqyo111-10" value="&lt;b&gt;Input&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="148" y="122" width="57" height="31" as="geometry" />
+        </mxCell>
+        <mxCell id="HMViNhWAmGEvSDqyo111-11" value="&lt;b&gt;Output&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="582" y="127" width="70" height="31" as="geometry" />
+        </mxCell>
+        <mxCell id="HMViNhWAmGEvSDqyo111-12" value="&lt;b&gt;Processing&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="341" y="96" width="104" height="31" as="geometry" />
+        </mxCell>
+        <mxCell id="HMViNhWAmGEvSDqyo111-13" value="&lt;div&gt;&lt;b style=&quot;background-color: initial;&quot;&gt;Detect Lanes&lt;/b&gt;&lt;br&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" vertex="1" parent="1">
+          <mxGeometry x="73" y="403" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HMViNhWAmGEvSDqyo111-14" value="&lt;b&gt;Create Map with SLAM&lt;/b&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" vertex="1" parent="1">
+          <mxGeometry x="203" y="403" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HMViNhWAmGEvSDqyo111-15" value="&lt;b&gt;Mark lanes as virtual Obstacles&lt;/b&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="1">
+          <mxGeometry x="560" y="404" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HMViNhWAmGEvSDqyo111-16" value="&lt;b&gt;Autonomous Navigation&lt;/b&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="1">
+          <mxGeometry x="691" y="404" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HMViNhWAmGEvSDqyo111-24" value="" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.6;dx=40;notch=0;direction=east;fillColor=#fa6800;fontColor=#000000;strokeColor=#C73500;" vertex="1" parent="1">
+          <mxGeometry x="283" y="410" width="100" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="HMViNhWAmGEvSDqyo111-27" value="&lt;b&gt;Log Robot&#39;s Pose Data and Lines Centroids Data&lt;/b&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="384" y="405" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HMViNhWAmGEvSDqyo111-28" value="" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.6;dx=40;flipH=1;notch=0;fillColor=#fa6800;fontColor=#000000;strokeColor=#C73500;direction=west;" vertex="1" parent="1">
+          <mxGeometry x="466" y="408" width="94" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="HMViNhWAmGEvSDqyo111-33" value="" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.uTurnArrow;dy=11;arrowHead=43;dx2=25;direction=south;fillColor=#fa6800;fontColor=#000000;strokeColor=#C73500;" vertex="1" parent="1">
+          <mxGeometry x="103" y="303" width="159" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="HMViNhWAmGEvSDqyo111-34" value="" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.uTurnArrow;dy=11;arrowHead=43;dx2=25;direction=south;fillColor=#fa6800;fontColor=#000000;strokeColor=#C73500;" vertex="1" parent="1">
+          <mxGeometry x="591" y="303" width="160" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="HMViNhWAmGEvSDqyo111-36" value="&lt;div&gt;&lt;b&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Then the 2D occupancy grid map is updated based on the stored data to mark the lanes as virtual obstacles.&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="615" y="565" width="177" height="102" as="geometry" />
+        </mxCell>
+        <mxCell id="HMViNhWAmGEvSDqyo111-37" value="&lt;b&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;During the process, another node, stores the Robot’s Pose data and Lanes Centroid data simultaneously.&lt;/font&gt;&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="297" y="701" width="233" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="HMViNhWAmGEvSDqyo111-38" value="&lt;div&gt;&lt;b&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;The Robot makes the map of the environment using SLAM while tracking the Lane.&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="73" y="565" width="177" height="102" as="geometry" />
+        </mxCell>
+        <mxCell id="HMViNhWAmGEvSDqyo111-40" value="" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.bendArrow;dy=15;dx=38;notch=0;arrowHead=55;rounded=1;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="250" y="601" width="168" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="HMViNhWAmGEvSDqyo111-41" value="" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.bendArrow;dy=15;dx=38;notch=0;arrowHead=55;rounded=1;direction=east;" vertex="1" parent="1">
+          <mxGeometry x="425" y="588" width="190" height="110" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
