@@ -14,10 +14,10 @@ The below diagram shows the project's overview and system's block diagram respec
 
 ### Demo Video
 You can watch the demo video of Turtlebot3 tracking the lane in real arena by clicking on the below image
-[![Watch the video](https://github.com/EhtishamAshraf/TB3_slam_with_virtual_obstacles/blob/f0dc13371ab0a0afcac8cdd21c9a930e72c3d6d8/src/slam_lane_tracking_pkg/Image/Robot_arena.png)](https://youtu.be/-JGLHBf8EOU)
+[![Watch the video](https://github.com/EhtishamAshraf/TB3_slam_with_virtual_obstacles/blob/f0dc13371ab0a0afcac8cdd21c9a930e72c3d6d8/src/slam_lane_tracking_pkg/Image/Robot_arena.png)](https://youtu.be/QGK9laWSCQU)
 
 You can watch the demo video of virtual lane marking and Autonomous Navigation by a Turtlebot3 in real world arena by clicking on the below image
-[![Watch the video](https://github.com/EhtishamAshraf/TB3_slam_with_virtual_obstacles/blob/2adfd5ad148a105782329a14557024fdacdf6fbb/src/slam_lane_tracking_pkg/Image/6-Navigation.png)](https://youtu.be/vERA8F4Mlvc)
+[![Watch the video](https://github.com/EhtishamAshraf/TB3_slam_with_virtual_obstacles/blob/2adfd5ad148a105782329a14557024fdacdf6fbb/src/slam_lane_tracking_pkg/Image/6-Navigation.png)](https://youtu.be/3261m1lty0E)
 
 ## Environment
 Below image shows the real world arena used in this project. The world contains white and yellow lines.
