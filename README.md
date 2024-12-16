@@ -224,7 +224,7 @@ rosrun slam_lane_tracking_pkg robot_pose_data.py
 ```bash
 rosrun map_server map_saver -f ~/map
 ```
-11. After saving the map, close all the previous terminals and open a new terminal and run the following command to process the map to mark the lanes as virtual obstacles (Terminal 11)
+11. After saving the map, close all the previous terminals (except Terminal 1) and open a new terminal and run the following command to process the map to mark the lanes as virtual obstacles (Terminal 11)
 ```bash
 rosrun slam_lane_tracking_pkg virtual_obstacles_node.py
 ```
