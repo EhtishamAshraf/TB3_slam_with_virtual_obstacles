@@ -20,9 +20,6 @@ You can watch the demo video of Turtlebot3 tracking the lane in real arena by cl
 For Part 2 of the project (Mapping and Autonomous Navigation), click here to view the video:
 [![Watch the video](https://github.com/EhtishamAshraf/TB3_slam_with_virtual_obstacles/blob/d8ee77b808e20a995e924059716f959c14ea1595/src/slam_lane_tracking_pkg/Image/6-Navigation.png)](https://youtu.be/3261m1lty0E?si=Vj24VY-DBaLAHGaP)
 
-You can watch the demo video of virtual lane marking and Autonomous Navigation by a Turtlebot3 in real world arena by clicking on the below image
-[![Watch the video](https://github.com/EhtishamAshraf/TB3_slam_with_virtual_obstacles/blob/2adfd5ad148a105782329a14557024fdacdf6fbb/src/slam_lane_tracking_pkg/Image/6-Navigation.png)](https://youtu.be/3261m1lty0E)
-
 ## Environment
 Below image shows the real world arena used in this project. The world contains white and yellow lines.
 ![World](https://github.com/EhtishamAshraf/TB3_slam_with_virtual_obstacles/blob/9cc6b523596605adb87029ce7314993fbb587df0/src/slam_lane_tracking_pkg/Image/Arena_1.png)
